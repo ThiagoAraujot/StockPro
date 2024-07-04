@@ -1,12 +1,12 @@
 from django.db import models
 from brands.models import Brand
-from categories.models import Categorie
+from categories.models import Category
 
 
 class Product(models.Model):
     title = models.CharField(max_length=500)
     category = models.ForeignKey(
-        Categorie, on_delete=models.PROTECT, related_name='products')
+        Category, on_delete=models.PROTECT, related_name='products')
     brand = models.ForeignKey(
         Brand, on_delete=models.PROTECT, related_name='products')
     description = models.TextField(null=True, blank=True)
