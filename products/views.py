@@ -26,7 +26,7 @@ class ProductListView(ListView):
 
         if brand:
             queryset = queryset.filter(brand_id=brand)
-            
+
         if serie_number:
             queryset = queryset.filter(serie_number__icointains=serie_number)
 
